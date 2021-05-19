@@ -1,0 +1,10 @@
+/*Sets style for body */
+body {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-size: 45px;
+    color: rgb(140, 98, 180);
+}

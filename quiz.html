@@ -4,16 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Quiz Time</title>
 </head>
 <body>
-
-    <button id="start">Start Quiz</button>
-
-    <div class="infobox">
-        <div class="infotitle">
-            <span>Rules for this Quiz!</span>
-            <ul><li>If user </li></ul>
+    <header>
+        <div class="highscores">
+            <button class="bttnscore">High Scores</button>
+        </div>
+        <div class="timer">
+            <p>Time Left:<span id="timerset"></span></p>
+        </div>
+    </header>
+    <h1>Code Quiz Time!</h1>
+    <div class="container">
+        <!--this is class hidden to change later-->
+        <div id="questcon" class="hidden">
+            <div id="question">Questions</div>
+            <div id="answerbtn" class="bttnclass">
+                <button class="bttn">Answer 1</button>
+                <button class="bttn">Answer 2</button>
+                <button class="bttn">Answer 3</button>
+                <button class="bttn">Answer4</button>
+            </div>    
         </div>
         <div class="listrules"></div>
 </body>

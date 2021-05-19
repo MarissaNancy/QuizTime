@@ -17,4 +17,5 @@ When code quiz shows rules, then upon clicking start button a time starts and us
 ## Mockup
 The following is how the application should look:
 ![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./Assets/04-web-apis-homework-demo.gif)
+
 ## Credits
