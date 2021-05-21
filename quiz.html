@@ -16,21 +16,25 @@
             <p>Time Left:<span id="timerset"></span></p>
         </div>
     </header>
+    <div class="rules" id="rules">
+        <h1>Welcome to Coding Quiz!</h1>
+        <p>
+            Answer questions before time runs out to win! If an answer is wrong you will be deducted 10 seconds thus reducing your score.
+        </p>
+        <button type="button" class="startbttn" id = "startbttn"> Start! </button>
+    </div>
     <main>
-        <div class="container">
-           <div id ="questcon" class="hide">
-                <div id="questions">Question</div>
-                <div id="asnwrbttns" class="bttncon">
-                    <button class="bttn">Answer1</button>
-                    <button class="bttn">Answer2</button>
-                    <button class="bttn">Answer3</button>
-                    <button class="bttn">Answer4</button>
-                </div>
-           </div>
+        <div id ="questcon" class="hidden">
+            <div id="questquest">Questions</div>
+                <div id="answer"></div>
+                <p id ="Uresp"></p>
+            </div>
         </div>
-        <div class="strtcon">
-            <button id="startbttn" class="start-bttn">Start</button>
+        <div class = "hidden" id = "response"></div>
+            <div class = "hideinline" id = "scoreres"></div>
+            <p>Enter initials! </p>
         </div>
+        <div class = "hidden inline" id = "enter"></div>
     </main>
     <script src="script.js"></script>
 </body>
