@@ -8,7 +8,7 @@ const responseel = document.getElementById('response')
 
 const timer = document.getElementById('timerset');
 let timerseconds = 75;
-let userHighscore;
+
 
 const questions = [
     {
@@ -33,10 +33,11 @@ const questions = [
     },
     {
         question: 'How many hours should you sleep?',
-            answers: ['1990', '1921', '1936','1800'],
-            answerCheck: '1990',
+            answers: ['8', '5', '4','10'],
+            answerCheck: '8',
     },
 ]
+
 function nextquestion() {
     showquestion(shuffquest[questionsleft])
 }
@@ -55,6 +56,7 @@ function showquestion(question){
     });
 }
 
+let questionsleft = 0;
 
 function chooseanswr(){
     const selectedButton = e.target
@@ -65,15 +67,13 @@ function chooseanswr(){
     })
 
 }
-
-let questionsleft = 0;
-
 function startquiz() {
-    document.getElementById("rules").classList.add("hide");
-    document.getElementById("questcon").classList.remove("hide");
-    //questionsleft = 0
-    // timerStart();
-    // askquestions();
+    console.log('started')
+    startButton.classList.add('hide')
+    shuffquest = questions.sort(() => Math.random() - .5)
+    questionsleft = 0
+    questioncontainer.classList.remove('hide')
+    nextquestion()
 }
 
 function timerStart() {
@@ -81,12 +81,17 @@ function timerStart() {
     timerseconds--;
         timer.textContent = "Time: " + timerseconds + " seconds remaining!";
         if (timerseconds === 0 || questionsleft == questions.length) {
-          clearInterval(timer);
-          setTimeout(displayScore);
+        }
+        if ( timerseconds === 0) {
+            clearInterval(timer);
         }
       }, 1000);
 };
 timerStart()
+
+function nextquestion() {
+    showquestion(shuffquest[questionsleft])
+}
 
 function displayScore () {
     document.getElementById("questcon").classList.add("hidden");
@@ -105,26 +110,5 @@ function displayScore () {
     let userHighscore = JSON.stringify(userscore.textContent);
 };
 displayScore();
-
-answerelem.addEventListener('click', (event) => {
-    if (answer === event.target.textContent) {
-        responsel.textContent = "Right on!";
-        setTimeout(hideResponse,1000);
-    }
-    else {
-        responseel.textContent = "Oops not correct!";
-        timerseconds = timerseconds - 10;
-    }
-    showResponse();
-    askquestions();
-    }
-);
-
-responseel.addEventListener('click', () => {
-    if (typeof Storage !== 'undefined'){
-        localStorage.setItem('score',timerseconds);
-        localStorage.setItem('user',userHighscore);
-    }
-});
 
 startButton.addEventListener('click', startquiz)
